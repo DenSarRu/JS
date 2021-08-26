@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+
+        function numberToObject(inputNumber) {
+            return {
+                units: (inputNumber % 10),
+                tens: (Math.floor(inputNumber / 10) % 10),
+                hundreds: (Math.floor(inputNumber / 100) % 10)
+            };
+        };
+
+
+        let numberObject = null;
+
+        while (true) {
+            let userInput = Number(prompt('Введите число от 0 до 999'));
+            if (Number.isInteger(userInput) && (userInput > 0 && userInput < 999)) {
+                let numberObject = numberToObject(userInput);
+                console.log(numberObject);
+                break;
+            } else {
+                alert('Нужно ввести число в диапазон от 0 до 999!')
+            }
+        };
+
+    </script>
+</body>
+
+</html>
